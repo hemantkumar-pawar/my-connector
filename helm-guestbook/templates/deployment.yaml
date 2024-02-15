@@ -40,8 +40,8 @@ spec:
           livenessProbe:
             httpGet:
               path: {{ .Values.health.livenessProbe.path }}
-              port: { { .Values.service.internalPort } }
-              #port: http
+              #port: { { .Values.service.internalPort } }
+              port: http
             initialDelaySeconds: {{ .Values.health.livenessProbe.initialDelaySeconds }}
             timeoutSeconds: {{ .Values.health.livenessProbe.timeoutSeconds }}
             periodSeconds: {{ .Values.health.livenessProbe.periodSeconds }}
