@@ -31,7 +31,7 @@ spec:
           readinessProbe:
             httpGet:
               path: {{ .Values.health.readinessProbe.path }}
-              #port: http
+              port: http
               #port: { { .Values.service.internalPort } }
             initialDelaySeconds: {{ .Values.health.readinessProbe.initialDelaySeconds }}
             timeoutSeconds: {{ .Values.health.readinessProbe.timeoutSeconds }}
@@ -40,7 +40,7 @@ spec:
           livenessProbe:
             httpGet:
               path: {{ .Values.health.livenessProbe.path }}
-              #port: { { .Values.service.internalPort } }
+              port: { { .Values.service.internalPort } }
               #port: http
             initialDelaySeconds: {{ .Values.health.livenessProbe.initialDelaySeconds }}
             timeoutSeconds: {{ .Values.health.livenessProbe.timeoutSeconds }}
