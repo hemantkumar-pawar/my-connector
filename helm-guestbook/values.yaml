@@ -18,6 +18,26 @@ service:
   type: NodePort
   port: 8080
 
+health:
+  readinessProbe:
+    httpGet:
+      path: /actuator/health
+      port: http
+      scheme: HTTP
+    initialDelaySeconds: 30
+    timeoutSeconds: 2
+    periodSeconds: 5
+    failureThreshold: 3
+  livenessProbe:
+    httpGet:
+      path: /actuator/health
+      port: http
+      scheme: HTTP
+    initialDelaySeconds: 30
+    timeoutSeconds: 2
+    periodSeconds: 5
+    failureThreshold: 3
+
 ingress:
   enabled: false
   annotations: {}
