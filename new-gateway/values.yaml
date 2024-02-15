@@ -13,6 +13,7 @@ image:
 
 #containerPort: 80
 containerPort: 8080
+  
 
 service:
   type: NodePort
