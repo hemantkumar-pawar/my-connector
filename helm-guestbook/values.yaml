@@ -20,19 +20,13 @@ service:
 
 health:
   readinessProbe:
-    httpGet:
-      path: /actuator/health
-      port: http
-      scheme: HTTP
+    path: /actuator/health
     initialDelaySeconds: 30
     timeoutSeconds: 2
     periodSeconds: 5
     failureThreshold: 3
   livenessProbe:
-    httpGet:
-      path: /actuator/health
-      port: http
-      scheme: HTTP
+    path: /actuator/health
     initialDelaySeconds: 30
     timeoutSeconds: 2
     periodSeconds: 5
